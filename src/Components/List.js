@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import Item from './Item'
+import App from '../App'
 
 export default function List({catsWithMaleOwners, catsWithFemaleOwners}) {
     const maleOwnersCats = catsWithMaleOwners.map(cat => {
-        return <Item name={cat} />
+        return <Item key={cat} name={cat} />
     })
     const femaleOwnersCats = catsWithFemaleOwners.map(cat => {
-        return <Item name={cat} />
+        return <Item key={cat} name={cat} />
     })
-
     return(
     <div>
         <h3>Male</h3>
