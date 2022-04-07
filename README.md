@@ -23,6 +23,7 @@ Steps I thought of and executed for sorting out the cats for the given data:
 
 ## How to setup
 Run the following commands to setup, given node and npm is available:
+
     1. git clone https://github.com/fyckl/agl-developer-test.git
     2. cd agl-developer-test
     3. npm install
