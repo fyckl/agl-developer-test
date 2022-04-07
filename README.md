@@ -16,6 +16,8 @@ Steps I thought of and executed for sorting out the cats for the given data:
     3. Then create an array with those cats
     4. Sort out the two arrays alphabetically
 
+Main logic can be found [here](https://github.com/fyckl/agl-developer-test/blob/main/src/App.js)
+
 ## Libraries/Tools used
 
 * No main dependencies
