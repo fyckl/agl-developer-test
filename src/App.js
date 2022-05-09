@@ -4,7 +4,8 @@ import List from './Components/List';
 
 function App() {
   const dataURL = 'http://agl-developer-test.azurewebsites.net/people.json'
-  const [loading, setLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
+  const [isError, setError] = useState(false)
   const [peopleData, setPeopleData] = useState([])
   const [catsWithMaleOwners, setCatsWithMaleOwners] = useState([])
   const [catsWithFemaleOwners, setCatsWithFemaleOwners] = useState([])
@@ -15,15 +16,19 @@ function App() {
 
   // Function which retrieves the JSON data and saves it
   useEffect(() => {
-    fetch(dataURL)
-      .then(response => response.json())
-      .then(data => setPeopleData(data))
-      .then(() => setLoading(false))
+    try{
+      fetch(dataURL)
+        .then(response => response.json())
+        .then(data => setPeopleData(data))
+        .then(() => setIsLoading(false))
+    } catch{
+      setError(true)
+    }
   },[])
     
   useEffect(() => {
     
-    if(loading === false){
+    if(isLoading === false){
       // Function which sorts the data and create two arrays, one for cats with male owners, the other for cats with female owners
       peopleData.forEach(person => {
         if(person.gender === "Male" && person.pets){
@@ -41,11 +46,15 @@ function App() {
     setCatsWithFemaleOwners(prevState => prevState.sort((a, b) => a.localeCompare(b)))
     setCatsWithMaleOwners(prevState => prevState.sort((a, b) => a.localeCompare(b)))
 
-  },[loading])
+  },[isLoading])
 
   return (
     <div className="App">
-        <List catsWithMaleOwners={catsWithMaleOwners} catsWithFemaleOwners={catsWithFemaleOwners} />
+      {
+        !isError ?
+        <List catsWithMaleOwners={catsWithMaleOwners} catsWithFemaleOwners={catsWithFemaleOwners} /> :
+        <h1>Internal server error, please try again later</h1>
+      }
     </div>
   );
 }
