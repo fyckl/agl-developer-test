@@ -1,6 +1,7 @@
 # Cat sorter
 
 Sorting cats alphabetically into two lists depending on the gender of their owner.
+test change
 
 ## Assumptions
 
@@ -20,10 +21,11 @@ Main logic can be found [here](https://github.com/fyckl/agl-developer-test/blob/
 
 ## Libraries/Tools used
 
-* No main dependencies
-* Written in React with some ES6 syntax
+- No main dependencies
+- Written in React with some ES6 syntax
 
 ## How to setup
+
 Run the following commands to setup, given node and npm is available:
 
     1. git clone https://github.com/fyckl/agl-developer-test.git
