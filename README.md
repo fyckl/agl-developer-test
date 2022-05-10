@@ -23,6 +23,7 @@ Main logic can be found [here](https://github.com/fyckl/agl-developer-test/blob/
 
 - No main dependencies
 - Written in React with some ES6 syntax
+- Uses Jest for testing
 
 ## How to setup
 
@@ -32,3 +33,9 @@ Run the following commands to setup, given node and npm is available:
     2. cd agl-developer-test
     3. npm install
     4. npm start  -> to see test output
+## How to run tests
+    
+Run the following commands
+
+    1. npm test
+    
