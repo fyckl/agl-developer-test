@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Item from './Item'
-import App from '../App'
 
 export default function List({catsWithMaleOwners, catsWithFemaleOwners}) {
     const maleOwnersCats = catsWithMaleOwners.map(cat => {

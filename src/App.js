@@ -10,10 +10,6 @@ function App() {
   const [catsWithMaleOwners, setCatsWithMaleOwners] = useState([])
   const [catsWithFemaleOwners, setCatsWithFemaleOwners] = useState([])
   
-  function testData(){
-    const data = catsWithFemaleOwners
-  }
-
   // Function which retrieves the JSON data and saves it
   useEffect(() => {
     try{
